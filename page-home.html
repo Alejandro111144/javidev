@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javidev - Career Roadmaps in Tech</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body,
+    html {
+      padding-bottom: 0%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0.5) 200%);
+    }
+
+    #app {
+      position: relative;
+      height: 100%;
+      font-family: "Montserrat", serif;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      #app {
+      height: auto;
+      padding: 16px;
+      
+      }
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      color: black;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+      line-height: 130%;
+      user-select: none;
+      z-index: 7;
+      size: 700cm;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+      line-height: 1.5;
+      padding-top: 5%;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #webgl-canvas {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 1;
+      dis
+    }
+   
+
+    @media (max-width: 480px) {
+      #webgl-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40vh;
+        z-index: -1;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+        padding-top: 30%;
+      }
+
+     
+    }
+    
+
+    .buttons {
+      color: #636363;
+      position: absolute;
+      top: 5%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      display: flex;
+      background: rgba(0, 0, 0, 0.014);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.014);
+      padding: 10px 16px;
+      gap: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      color: #ffffff;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      box-shadow: 0 6px 12px rgba(106, 17, 203, 0.6);
+    }
+
+    button:active {
+      color: #ffffff;
+      transform: scale(0.95);
+      box-shadow: none;
+    }
+
+    .animated-btn {
+      color: #636363;
+      position: absolute;
+      top: 5%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      display: flex;
+      background: rgba(0, 0, 0, 0.014);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.014);
+      padding: 10px 16px;
+      gap: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .animated-btn:hover {
+      color: #ffffff;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      box-shadow: 0 6px 12px rgba(106, 17, 203, 0.6);
+    }
+
+    .animated-btn-me {
+      color: #636363;
+      position: absolute;
+      top: 11%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      display: flex;
+      background: rgba(0, 0, 0, 0.014);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.014);
+      padding: 10px 16px;
+      gap: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .animated-btn-me:hover {
+      color: #ffffff;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      box-shadow: 0 6px 12px rgba(106, 17, 203, 0.6);
+    }
+
+    .py-30 {
+      color: #636363;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      display: flex;
+      background: rgba(0, 0, 0, 0.014);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.014);
+      padding: 10px 16px;
+      gap: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-main-box {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+      z-index: 30;
+    }
+
+    .two-column-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .column {
+      flex: 1;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .hero-title {
+        font-size: 4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .py-30 {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        padding: 16px 12px;
+        flex-direction: column;
+        size: 30px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .hero-main-box {
+        max-width: 400%;
+        margin: 0 auto;
+        padding: 16px;
+        z-index: 30;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .py-30 {
+        padding: 12px 8px;
+        gap: 8px;
+        font-size: 14px;
+        size: 30px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .buttons {
+        top:1%;
+      left: 85%;
+      
+      transform: translateX(-50%);
+      flex-direction: row;
+      padding: 8px;
+      max-height:70px;
+      
+      }
+
+      .animated-btn {
+        top:5%;
+      left: 40%;
+      
+      transform: translateX(-10%);
+      flex-direction: column;
+      padding: 8px;
+      max-height:40px;
+      }
+      .animated-btn-me {
+        top:5%;
+      left: 10%;
+      
+      transform: translateX(-10%);
+      flex-direction: column;
+      padding: 8px;
+      max-height:40px;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-main-box {
+        width: 40;
+        margin: 0 auto;
+        padding: 16px;
+        z-index: 30;
+      }
+    }
+
+   
+
+      .hero-title {
+        font-size: 2rem;
+        padding-top: 10%;
+      }
+
+      .hero-main-box {
+        padding: 8px;
+      }
+
+      .column {
+        padding: 10px;
+      }
+
+      .two-column-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+    
+
+    body2 {
+      position: relative;
+      z-index: 7;
+    }
+
+    .about-contact-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 20px;
+    }
+
+    .about-section,
+    .contact-section {
+      flex: 1;
+      margin: 0 10px;
+      padding: 20px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .about-section h2,
+    .contact-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .about-section p,
+    .contact-section p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    #resources-section {
+      scroll-margin-top: 20px;
+    }
+  </style>
+</head>
+ 
+
+
+
+
+
+
+  
+
+<div id="app">
+  <!-- Hero Section -->
+  <div>
+    <h1 class="hero-title">
+      Find the best resources and <br>
+      tools to level up your skills
+    </h1>
+  </div>
+
+  <!-- Animated Button "Resources" -->
+  <a id="scroll-to-resources" class="animated-btn" href="#resources-section">
+    Resources
+  </a>
+
+  <!-- Animated Button "About Me" -->
+  <a id="about-me-link" class="animated-btn-me" href="http://javidev.site/about-me/" target="_blank">
+    About Me
+  </a>
+
+  <!-- Buttons -->
+  <div class="buttons">
+    <button id="gravity-btn">Toggle Gravity</button>
+    <button id="colors-btn">Change Colors</button>
+  </div>
+
+  <!-- WebGL Background Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+</div>
+
+    <section class="py-30" >
+    
+      <div class="hero-main-box">
+        <h2 style="font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 24px;">Roadmaps</h2>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
+          
+          <a href="https://drive.google.com/file/d/1t2ZIyyYkz_cjxx_dZMVcEk0FXsBTHV36/view?usp=drive_link" target="_blank" style="display: block; text-decoration: none;">
+            <div style="background: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 16px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+              <img alt="Frontend Developer" src="https://storage.googleapis.com/a1aa/image/mlsvOStsA75gN1r2X7Eu0o8FKX6gSomS8K2XDf8rnhRWDvfTA.jpg" style="width: 60px; height: 60px; margin: 0 auto 16px;" />
+              <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">Frontend Developer</h3>
+              <p style="color: #4a5568; font-size: 14px;">Learn the skills to build beautiful and interactive websites.</p>
+            </div>
+          </a>
+      
+          <a href="https://drive.google.com/file/d/1rsn5k_d0JkKWVhdrw6Ohh5QNuqHGuH1f/view?usp=drive_link" target="_blank" style="display: block; text-decoration: none;">
+            <div style="background: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 16px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+              <img alt="Backend Developer" src="https://storage.googleapis.com/a1aa/image/339lVuu0tqIOHJeenutteTNxAnUseyLNu46IXZtglM5Cb49PB.jpg" style="width: 60px; height: 60px; margin: 0 auto 16px;" />
+              <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">Backend Developer</h3>
+              <p style="color: #4a5568; font-size: 14px;">Master the server-side of web development.</p>
+            </div>
+          </a>
+      
+          <a href="https://drive.google.com/file/d/1T80MXlhzkidB8HiqUku-vtNA1XAOokKS/view?usp=drive_link" target="_blank" style="display: block; text-decoration: none;">
+            <div style="background: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 16px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+              <img alt="DevOps Engineer" src="https://storage.googleapis.com/a1aa/image/4BYyUol2meTODybg7GhXzK1WLW9xbBM7c1mO3bKg091YDvfTA.jpg" style="width: 60px; height: 60px; margin: 0 auto 16px;" />
+              <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">DevOps Engineer</h3>
+              <p style="color: #4a5568; font-size: 14px;">Bridge the gap between development and operations.</p>
+            </div>
+          </a>
+      
+          <a href="https://drive.google.com/file/d/1WCeXZ7pPf62QmMthMQLzcuhbO4FJXUTb/view?usp=drive_link" target="_blank" style="display: block; text-decoration: none;">
+            <div style="background: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 16px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+              <img alt="Full-Stack Developer" src="https://storage.googleapis.com/a1aa/image/sebsciD2RIwBc68qavgqZsLZZ14CxpYcGFJPc87vsVUXDvfTA.jpg" style="width: 60px; height: 60px; margin: 0 auto 16px;" />
+              <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">Full-Stack Developer</h3>
+              <p style="color: #4a5568; font-size: 14px;">Become proficient in both frontend and backend development.</p>
+            </div>
+          </a>
+      
+          <a href="https://drive.google.com/file/d/1Wk8qStgnlt2Q3ve5Gu32D2YvA55iMta1/view?usp=drive_link" target="_blank" style="display: block; text-decoration: none;">
+            <div style="background: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 16px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+              <img alt="Software Architect" src="https://storage.googleapis.com/a1aa/image/vXP7Tfu3Ov3LTiHlKUoNzbeDOBCy89FgzqkjE8ycuHkzGeePB.jpg" style="width: 60px; height: 60px; margin: 0 auto 16px;" />
+              <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">Software Architect</h3>
+              <p style="color: #4a5568; font-size: 14px;">Design and oversee complex software systems.</p>
+            </div>
+          </a>
+      
+        </div>
+      </div>
+      
+      </div>
+      
+      
+      
+    </section>
+
+    
+
+
+  </div>
+
+ 
+
+  <!-- 
+
+    This script imports and utilizes the Spheres1Background component from the Three.js library to create an animated background with spheres. 
+    The component is imported from a CDN and initialized with specific configuration options such as count, minSize, maxSize, and gravity.
+
+    The script also includes functionality to toggle the gravity of the spheres and change their colors using buttons with IDs 'gravity-btn' and 'colors-btn', respectively.
+
+    Additionally, there is a script to add smooth scroll functionality to a button with the ID 'scroll-to-roadmaps', which scrolls to an element with the class 'roadmaps-section' when clicked.
+
+    Important: This component was created by Kevin Levron (@soju22), a Freelance Creative Developer from Biarritz, France. Please ensure to credit the creator appropriately to comply with copyright laws.
+  -->
+  <!-- Import Three.js Component for Background -->
+  <script type="module">
+    import { Spheres1Background } from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.5/build/backgrounds/spheres1.cdn.min.js';
+
+    const bg = Spheres1Background(document.getElementById('webgl-canvas'), {
+      count: 200,
+      minSize: 0.3,
+      maxSize: 1,
+      gravity: 0.5
+    });
+
+    // Button to Toggle Gravity
+    document.getElementById('gravity-btn').addEventListener('click', () => {
+      bg.spheres.config.gravity = bg.spheres.config.gravity === 0 ? 1 : 0;
+    });
+
+    // Button to Change Background Colors
+    document.getElementById('colors-btn').addEventListener('click', () => {
+      bg.spheres.setColors([0xffffff * Math.random(), 0xffffff * Math.random(), 0xffffff * Math.random()]);
+    });
+  </script>
+<script>
+  // Agregar funcionalidad de scroll al botón
+  document.getElementById("scroll-to-roadmaps").addEventListener("click", function () {
+    document.querySelector(".roadmaps-section").scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+<body2 class="bg-repeat text-gray-900" >
+  
+ 
+
+<!-- Resources Page -->
+<section >
+  <div class="container mx-auto px-4" id="resources-section">
+    <h2  class="text-3xl font-bold text-center mb-12 sticky-header">Resources</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <a href="https://youtube.com/playlist?list=PLSDeUiTMfxW6VChKWb26Z_mPR4f6fAmMV&si=_VVDEcFfPL7qutNP" target="_blank" style="display: block; text-decoration: none;">
+        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col" style="min-height: 130px;">
+          <h3 class="text-xl font-bold mb-2">Video Tutorials</h3>
+          <p class="text-gray-700 flex-grow">Watch and learn from industry experts.</p>
+        </div>
+      </a>
+      <a href="https://devmountain.com/blog/7-highly-recommended-programming-books/" target="_blank" style="display: block; text-decoration: none;">
+        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col" style="min-height: 130px;">
+          <h3 class="text-xl font-bold mb-2">Recommended Books</h3>
+          <p class="text-gray-700 flex-grow">Read books that will enhance your knowledge and skills.</p>
+        </div>
+      </a>
+      <a href="https://blog.fabrichq.ai/latest-ai-code-generators-a-comprehensive-list-b7ce1a461fac" target="_blank" style="display: block; text-decoration: none;">
+        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col" style="min-height: 130px;">
+          <h3 class="text-xl font-bold mb-2">AI Tools</h3>
+          <p class="text-gray-700 flex-grow">Discover the best AI-powered tools to supercharge your development process.</p>
+        </div>
+      </a>
+      <a href="https://dev.to/rubanginosingh/10-essential-tools-every-developer-should-know-about-1f4f" target="_blank" style="display: block; text-decoration: none;">
+        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col" style="min-height: 130px;">
+          <h3 class="text-xl font-bold mb-2">Essential Tools</h3>
+          <p class="text-gray-700 flex-grow">Discover the tools that professionals use daily.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+ <!-- Contenedor para About y Contact -->
+ <div class="container mx-auto p-8">
+  <div class="two-column-row">
+    <!-- About Section -->
+    <div class="column">
+      <h2 class="text-2xl font-bold mb-4">About Me</h2>
+      <p>Hi, I’m Javier, a passionate developer committed to simplifying learning and helping others achieve their goals. With Javidev, my mission is to provide you with the most useful and up-to-date resources to excel in the development world. Let’s build the future together!
+      </br>
+    </br>
+        If you’d like further tweaks or additions, let me know! 😊</p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="column">
+      <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+      <form>
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+          <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+          <textarea id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"></textarea>
+        </div>
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-400 text-xsm py-4">
+  <div class="container mx-auto px-4 text-center">
+    <div class="flex justify-center space-x-6 mt-4">
+      <a href="https://www.instagram.com/javidev.site/" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@javidev" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61568612923739" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://x.com/javidevsite" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.tiktok.com/@javidev.site" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+    <p class="text-white-800 mt-4">
+      Web site created By: © 2023 Javier Alejandro Castillo - javidev.
+    </p>
+    <p>
+      This site uses the Spheres1Background component from Three.js by Kevin Levron (@soju22).
+    </p>
+  </div>
+</footer>
+
+</body2>
+</html>
